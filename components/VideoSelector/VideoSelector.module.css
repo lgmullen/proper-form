@@ -1,0 +1,14 @@
+.button {
+  all: unset;
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+}
+
+.active {
+  color: yellow;
+}
+
+.button:hover {
+  color: yellow;
+}

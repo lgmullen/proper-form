@@ -1,0 +1,49 @@
+import styled from "@emotion/styled";
+import { FunctionComponent } from "react";
+import styles from "./VideoSelector.module.css";
+
+interface VideoSelectorProps {
+  setActive: (activeId: number) => void;
+  active: number;
+}
+
+export const VideoSelector: FunctionComponent<VideoSelectorProps> = ({
+  setActive,
+  active,
+}) => {
+  return (
+    <ul
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        height: "10vh",
+        width: "20%",
+        position: "fixed",
+        bottom: "10%",
+      }}
+    >
+      <li
+        onClick={() => setActive(0)}
+        className={styles.button}
+        style={{ color: active === 0 ? "yellow" : "" }}
+      >
+        1
+      </li>
+      <li
+        onClick={() => setActive(1)}
+        className={styles.button}
+        style={{ color: active === 1 ? "yellow" : "" }}
+      >
+        2
+      </li>
+      <li
+        onClick={() => setActive(2)}
+        className={styles.button}
+        style={{ color: active === 2 ? "yellow" : "" }}
+      >
+        3
+      </li>
+    </ul>
+  );
+};

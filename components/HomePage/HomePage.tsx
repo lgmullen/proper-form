@@ -3,6 +3,7 @@ import styles from "./HomePage.module.css";
 import { FunctionComponent, useState } from "react";
 import { Background } from "../Background";
 import { VideoSelector } from "../VideoSelector/VideoSelector";
+import { NavBar } from "../NavBar/NavBar";
 
 const videoData = [
   {
@@ -30,10 +31,8 @@ export const HomePage: FunctionComponent = () => {
     setVideos(
       videos.map((video) => {
         if (video.id === activeId) {
-          // Create a *new* object with changes
           return { ...video, hidden: false };
         } else {
-          // No changes
           return { ...video, hidden: true };
         }
       })
@@ -41,7 +40,6 @@ export const HomePage: FunctionComponent = () => {
   };
 
   const handleClick = (activeId: number) => {
-    console.log(activeId);
     setActive(activeId);
     handleUpdate(activeId);
   };
@@ -58,6 +56,7 @@ export const HomePage: FunctionComponent = () => {
           position: "relative",
         }}
       >
+        <NavBar />
         <h3 className={styles.title}>Proper Form</h3>
         <VideoSelector setActive={handleClick} active={active} />
         <Background active={active} videos={videos} />

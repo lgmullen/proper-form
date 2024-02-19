@@ -1,0 +1,9 @@
+.navButton {
+  color: rgb(68, 144, 255);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+:hover.navButton {
+  text-decoration: underline;
+}

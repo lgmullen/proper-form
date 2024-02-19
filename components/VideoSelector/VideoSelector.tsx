@@ -16,10 +16,8 @@ export const VideoSelector: FunctionComponent<VideoSelectorProps> = ({
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        height: "10vh",
-        width: "20%",
         position: "fixed",
-        bottom: "10%",
+        bottom: "3em",
       }}
     >
       <li

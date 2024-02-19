@@ -1,4 +1,25 @@
 .title {
-  font-size: 5rem;
+  font-size: 6em;
   color: yellow;
+  text-align: center;
+}
+
+.container {
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+  height: 100%;
+  width: 100vw;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 4em;
+  }
+  .container {
+    overflow-y: hidden;
+    height: 100%;
+    min-height: 100%;
+  }
 }

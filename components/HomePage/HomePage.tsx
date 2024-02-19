@@ -1,8 +1,8 @@
 "use client";
-import { FunctionComponent, SetStateAction, useEffect, useState } from "react";
+import styles from "./HomePage.module.css";
+import { FunctionComponent, useState } from "react";
 import { Background } from "../Background";
 import { VideoSelector } from "../VideoSelector/VideoSelector";
-import styles from "./HomePage.module.css";
 
 const videoData = [
   {

@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { FunctionComponent } from "react";
 import styles from "./VideoSelector.module.css";
 

@@ -11,7 +11,7 @@ export const NavBar: FunctionComponent = () => {
         position: "fixed",
         height: "4rem",
         top: "0rem",
-        backgroundColor: "black",
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
         borderBottom: `2px solid rgb(68, 144, 255)`,
         justifyContent: "space-between",
         alignItems: "center",

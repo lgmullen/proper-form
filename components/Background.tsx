@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
 
 interface BackgroundProps {
   active: number;
@@ -32,8 +32,7 @@ export const Background: FunctionComponent<BackgroundProps> = ({
           loop
           playsInline
           preload="auto"
-          style={{ objectFit: "cover" }}
-          hidden={video.hidden}
+          style={{ objectFit: "cover", display: video.hidden ? "none" : "" }}
         />
       ))}
     </div>

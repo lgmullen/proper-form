@@ -41,6 +41,20 @@ export const VideoSelector: FunctionComponent<VideoSelectorProps> = ({
       >
         3
       </li>
+      <li
+        onClick={() => setActive(3)}
+        className={styles.button}
+        style={{ color: active === 3 ? "yellow" : "" }}
+      >
+        4
+      </li>
+      <li
+        onClick={() => setActive(4)}
+        className={styles.button}
+        style={{ color: active === 4 ? "yellow" : "" }}
+      >
+        5
+      </li>
     </ul>
   );
 };

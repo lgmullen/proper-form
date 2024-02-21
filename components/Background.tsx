@@ -16,7 +16,7 @@ export const Background: FunctionComponent<BackgroundProps> = ({
         flexDirection: "column",
         position: "absolute",
         width: "100vw",
-        height: "100vh",
+        height: "100%",
         zIndex: -1,
       }}
     >
@@ -32,7 +32,10 @@ export const Background: FunctionComponent<BackgroundProps> = ({
           loop
           playsInline
           preload="auto"
-          style={{ objectFit: "cover", display: video.hidden ? "none" : "" }}
+          style={{
+            objectFit: "cover",
+            display: video.hidden ? "none" : "",
+          }}
         />
       ))}
     </div>

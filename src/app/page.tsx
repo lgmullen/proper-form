@@ -5,7 +5,9 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <HomePage />
+      <div style={{ height: "100dvh" }}>
+        <HomePage />
+      </div>
     </main>
   );
 }

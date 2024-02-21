@@ -6,10 +6,53 @@
   padding: 0.5rem;
 }
 
+.reelHeader {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3em;
+  color: orange;
+}
+
+.videoSelectorContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 3em;
+  width: 100%;
+}
+.infoText {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: yellow;
+}
+
 .active {
   color: yellow;
 }
 
 .button:hover {
   color: yellow;
+}
+
+@media (max-width: 768px) {
+  .videoSelectorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0em;
+  }
+  .reelHeader {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 2em;
+    color: orange;
+  }
+  .button {
+    all: unset;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
 }

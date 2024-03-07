@@ -1,0 +1,20 @@
+.item {
+  cursor: pointer;
+}
+.arrow {
+  display: none;
+}
+.item:hover {
+  color: rgb(68, 144, 255);
+  text-decoration: underline;
+}
+
+.item:hover ~ .arrow {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .item:hover ~ .arrow {
+    display: none;
+  }
+}

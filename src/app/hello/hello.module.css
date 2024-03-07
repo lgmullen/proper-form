@@ -1,0 +1,47 @@
+.pageContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  justify-items: center;
+  background: #eee9e3;
+  padding: 4rem;
+}
+
+.personalBioContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: "center";
+  color: black;
+  margin: 2rem;
+}
+
+.infoSectionContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  border: 2px solid black;
+  margin: 2rem;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .personalBioContainer {
+    display: none;
+  }
+  .infoSectionContainer {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0rem;
+    border: none;
+  }
+  .pageContainer {
+    padding: 1;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+}

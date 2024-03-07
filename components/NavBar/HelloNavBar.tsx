@@ -23,7 +23,9 @@ const defaultStyles: React.CSSProperties = {
 
 // Merge default styles with optional styles
 
-export const NavBar: FunctionComponent<NavBarProps> = ({ optionalStyles }) => {
+export const HelloNavBar: FunctionComponent<NavBarProps> = ({
+  optionalStyles,
+}) => {
   const mergedStyles: React.CSSProperties = {
     ...defaultStyles,
     ...optionalStyles,
@@ -31,8 +33,8 @@ export const NavBar: FunctionComponent<NavBarProps> = ({ optionalStyles }) => {
   return (
     <div style={mergedStyles}>
       <h3 className={styles.navButton}>Roster</h3>
-      <Link href="/hello">
-        <h3 className={styles.navButton}>Hello</h3>
+      <Link href="/">
+        <h3 className={styles.navButton}>Home</h3>
       </Link>
     </div>
   );

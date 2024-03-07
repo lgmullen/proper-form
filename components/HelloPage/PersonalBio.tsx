@@ -38,7 +38,9 @@ export const PersonalBio: FunctionComponent<PersonalBioProps> = ({
           objectFit="cover"
         />
       </div>
-      <h3>{crewMember.name}</h3>
+      <h3>
+        {crewMember.name}, {crewMember.role}
+      </h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non libero
         tempus, ultrices nisi sit amet, porta turpis. Fusce nec nulla ac sem

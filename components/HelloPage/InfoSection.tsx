@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import { HelloPageContainer } from "../HelloPageContainer";
 import { LineItem } from "../LineItem/LineItem";
+import { Spacer } from "../Spacer";
 
 interface InfoSectionProps {
   handleClick: (id: number) => void;
@@ -17,21 +18,17 @@ export const InfoSection: FunctionComponent<InfoSectionProps> = ({
               worlds of advertising, film, tv and photography.`}
       </h2>
 
-      <HelloPageContainer position={"President"}>
+      <HelloPageContainer position={"Producer"}>
         <LineItem handleClick={() => handleClick(0)} name={"Alex Holmes"} />
       </HelloPageContainer>
-      <hr
-        style={{
-          backgroundColor: "black ",
-          height: "2px",
-          width: "100%",
-          borderWidth: "0",
-        }}
-      />
-      <HelloPageContainer position={"Crew"}>
+      <Spacer />
+      <HelloPageContainer position={"Camera"}>
         <LineItem handleClick={() => handleClick(1)} name={"Bobby Rodgers"} />
-        <LineItem handleClick={() => handleClick(2)} name={"Cyrus Stowe"} />
         <LineItem handleClick={() => handleClick(3)} name={"John Tanner"} />
+      </HelloPageContainer>
+      <Spacer />
+      <HelloPageContainer position={"Crew"}>
+        <LineItem handleClick={() => handleClick(2)} name={"Cyrus Stowe"} />
       </HelloPageContainer>
     </>
   );

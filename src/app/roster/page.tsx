@@ -12,7 +12,6 @@ export default function Roster() {
             backgroundColor: "rgba(0, 0, 0)",
           }}
         />
-        Bobby Rodgers Cyrus Stowe John Tanner
         <div className={styles.pageContainer}>
           <div className={styles.rosterContainer}>
             <p>

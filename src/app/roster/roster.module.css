@@ -13,7 +13,6 @@
 .rosterContainer {
   display: flex;
   flex-direction: column;
-
   height: 60%;
   width: 50%;
 }
@@ -25,5 +24,12 @@
   .pageContainer {
     padding: 1rem;
     margin-top: 4rem;
+    font-size: 3rem;
+  }
+  .rosterContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
   }
 }

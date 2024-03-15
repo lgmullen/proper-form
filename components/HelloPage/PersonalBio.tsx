@@ -9,7 +9,23 @@ export const PersonalBio: FunctionComponent<PersonalBioProps> = ({
   crewMember,
 }) => {
   if (crewMember === undefined) {
-    return <div> Click on a crew member {"(in development)"}</div>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
+        }}
+      >
+        <Image
+          src="/proper_form_logo.png"
+          alt={"proper-form"}
+          height={25}
+          width={136}
+        />
+      </div>
+    );
   }
 
   return (

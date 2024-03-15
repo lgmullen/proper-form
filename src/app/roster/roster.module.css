@@ -1,0 +1,29 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0);
+  padding: 4rem;
+  font-size: 4rem;
+  color: rgb(68, 144, 255);
+}
+.rosterContainer {
+  display: flex;
+  flex-direction: column;
+
+  height: 60%;
+  width: 50%;
+}
+.rosterItem:hover {
+  color: red;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1rem;
+    margin-top: 4rem;
+  }
+}

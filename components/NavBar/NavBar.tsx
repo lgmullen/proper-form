@@ -30,7 +30,9 @@ export const NavBar: FunctionComponent<NavBarProps> = ({ optionalStyles }) => {
   };
   return (
     <div style={mergedStyles}>
-      <h3 className={styles.navButton}>Roster</h3>
+      <Link href="/roster">
+        <h3 className={styles.navButton}>Roster</h3>
+      </Link>
       <Link href="/hello">
         <h3 className={styles.navButton}>Hello</h3>
       </Link>

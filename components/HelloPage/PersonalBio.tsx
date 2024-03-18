@@ -1,6 +1,8 @@
-import { FunctionComponent } from "react";
-import Image from "next/image";
 import { CrewMember } from "@/app/types";
+import Image from "next/image";
+import { FunctionComponent } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 interface PersonalBioProps {
   crewMember: CrewMember | undefined;
@@ -8,9 +10,25 @@ interface PersonalBioProps {
 export const PersonalBio: FunctionComponent<PersonalBioProps> = ({
   crewMember,
 }) => {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".personal-bio",
+      {
+        opacity: 0,
+      },
+      { opacity: 1, duration: 1.5, ease: "power1.out" }
+    );
+    gsap.fromTo(
+      ".logo",
+      { opacity: 0, scale: 3 },
+      { opacity: 1, duration: 1, scale: 2, ease: "power1.out" }
+    );
+  }, [crewMember]);
+
   if (crewMember === undefined) {
     return (
       <div
+        className="logo"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -30,6 +48,7 @@ export const PersonalBio: FunctionComponent<PersonalBioProps> = ({
 
   return (
     <div
+      className="personal-bio"
       style={{
         display: "flex",
         flexDirection: "column",

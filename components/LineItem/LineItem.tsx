@@ -30,8 +30,6 @@ export const LineItem: FunctionComponent<LineItemProps> = ({
           height={30}
           width={180}
           style={{ marginLeft: "0.25rem" }}
-          // fill
-          // objectFit="cover"
         />
       </div>
     </span>

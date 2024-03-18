@@ -1,7 +1,6 @@
+import Link from "next/link";
 import { FunctionComponent } from "react";
 import styles from "./NavBar.module.css";
-import Router from "next/router";
-import Link from "next/link";
 
 interface NavBarProps {
   optionalStyles?: React.CSSProperties; // Define type for optional styles
@@ -19,6 +18,7 @@ const defaultStyles: React.CSSProperties = {
   borderBottom: `2px solid rgb(68, 144, 255)`,
   justifyContent: "space-between",
   alignItems: "center",
+  zIndex: 1,
 };
 
 // Merge default styles with optional styles

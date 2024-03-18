@@ -19,12 +19,22 @@ export default function Hello() {
     const user = profiles.find((profile) => profile.id == id);
     setCrewMember(user);
   };
+  if (document.querySelector(".logo")) {
+    gsap.fromTo(
+      ".logo",
+      { opacity: 0, scale: 1 },
+      { opacity: 1, duration: 1, scale: 1, ease: "power1.out" }
+    );
+  }
   useGSAP(() => {
-    if (document.querySelector(".logo")) {
+    if (document.querySelector(".personal-bio")) {
       gsap.fromTo(
-        ".logo",
-        { opacity: 0, scale: 3 },
-        { opacity: 1, duration: 1, scale: 2, ease: "power1.out" }
+        ".personal-bio",
+        {
+          opacity: 0,
+          scale: 1,
+        },
+        { scale: 1, opacity: 1, duration: 1.5, ease: "power1.out" }
       );
     }
   }, [crewMember]);

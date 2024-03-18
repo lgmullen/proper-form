@@ -13,18 +13,6 @@ export const PersonalBio: FunctionComponent<PersonalBioProps> = ({
   crewMember,
   setCrewMember,
 }) => {
-  useGSAP(() => {
-    if (document.querySelector(".personal-bio")) {
-      gsap.fromTo(
-        ".personal-bio",
-        {
-          opacity: 0,
-        },
-        { opacity: 1, duration: 1.5, ease: "power1.out" }
-      );
-    }
-  }, [crewMember]);
-
   if (crewMember !== undefined) {
     return (
       <div

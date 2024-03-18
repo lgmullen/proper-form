@@ -1,28 +1,27 @@
 import { CrewMember } from "@/app/types";
-import Image from "next/image";
-import { FunctionComponent } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
+import Image from "next/image";
+import { Dispatch, FunctionComponent, SetStateAction } from "react";
+import styles from "./PersonalBio.module.css";
 interface PersonalBioProps {
   crewMember: CrewMember | undefined;
+  setCrewMember: Dispatch<SetStateAction<CrewMember | undefined>>;
 }
 export const PersonalBio: FunctionComponent<PersonalBioProps> = ({
   crewMember,
+  setCrewMember,
 }) => {
   useGSAP(() => {
-    gsap.fromTo(
-      ".personal-bio",
-      {
-        opacity: 0,
-      },
-      { opacity: 1, duration: 1.5, ease: "power1.out" }
-    );
-    gsap.fromTo(
-      ".logo",
-      { opacity: 0, scale: 3 },
-      { opacity: 1, duration: 1, scale: 2, ease: "power1.out" }
-    );
+    if (document.querySelector(".personal-bio")) {
+      gsap.fromTo(
+        ".personal-bio",
+        {
+          opacity: 0,
+        },
+        { opacity: 1, duration: 1.5, ease: "power1.out" }
+      );
+    }
   }, [crewMember]);
 
   if (crewMember === undefined) {
@@ -57,6 +56,12 @@ export const PersonalBio: FunctionComponent<PersonalBioProps> = ({
         gap: "2rem",
       }}
     >
+      <button
+        className={styles.moduleButtonMobile}
+        onClick={() => setCrewMember(undefined)}
+      >
+        Close the module
+      </button>
       <div
         style={{
           display: "flex",

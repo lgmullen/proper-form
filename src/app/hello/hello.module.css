@@ -8,9 +8,16 @@
   padding: 4rem;
 }
 
-.personalBioContainer {
-  width: 50%;
+.logo {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.personalBioContainer {
+  display: flex;
+  width: 50%;
   flex-direction: column;
   align-items: "center";
   color: black;
@@ -29,7 +36,10 @@
 }
 @media (max-width: 768px) {
   .personalBioContainer {
-    display: none;
+    position: absolute;
+    height: 100%;
+    background: #eee9e3;
+    width: 100%;
   }
   .infoSectionContainer {
     width: 100%;
@@ -43,5 +53,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  .logo {
+    display: none;
   }
 }

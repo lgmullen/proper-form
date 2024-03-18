@@ -1,4 +1,7 @@
 "use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import Image from "next/image";
 import { useState } from "react";
 import { InfoSection } from "../../../components/HelloPage/InfoSection";
 import { PersonalBio } from "../../../components/HelloPage/PersonalBio";
@@ -16,6 +19,15 @@ export default function Hello() {
     const user = profiles.find((profile) => profile.id == id);
     setCrewMember(user);
   };
+  useGSAP(() => {
+    if (document.querySelector(".logo")) {
+      gsap.fromTo(
+        ".logo",
+        { opacity: 0, scale: 3 },
+        { opacity: 1, duration: 1, scale: 2, ease: "power1.out" }
+      );
+    }
+  }, [crewMember]);
 
   return (
     <main>
@@ -30,9 +42,23 @@ export default function Hello() {
           <div className={styles.infoSectionContainer}>
             <InfoSection handleClick={handleClick} />
           </div>
-          <div className={styles.personalBioContainer}>
-            <PersonalBio crewMember={crewMember} />
-          </div>
+          {crewMember !== undefined ? (
+            <div className={styles.personalBioContainer}>
+              <PersonalBio
+                crewMember={crewMember}
+                setCrewMember={setCrewMember}
+              />
+            </div>
+          ) : (
+            <div className={`${styles.logo} logo`}>
+              <Image
+                src="/proper_form_logo.png"
+                alt={"proper-form"}
+                height={25}
+                width={136}
+              />
+            </div>
+          )}
         </div>
       </div>
     </main>

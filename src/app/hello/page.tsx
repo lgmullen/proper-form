@@ -18,6 +18,7 @@ export default function Hello() {
   const handleClick = (id: number) => {
     const user = profiles.find((profile) => profile.id == id);
     setCrewMember(user);
+    window.scrollTo(0, 0);
   };
 
   useGSAP(() => {

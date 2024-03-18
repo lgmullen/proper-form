@@ -25,6 +25,8 @@ export const PersonalBio: FunctionComponent<PersonalBioProps> = ({
         }}
       >
         <IconClose
+          height="36px"
+          width="36px"
           className={styles.moduleButtonMobile}
           onClick={() => setCrewMember(undefined)}
         />

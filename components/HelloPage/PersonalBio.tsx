@@ -1,8 +1,7 @@
 import { CrewMember } from "@/app/types";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import Image from "next/image";
 import { Dispatch, FunctionComponent, SetStateAction } from "react";
+import IconClose from "../Icons/IconClose";
 import styles from "./PersonalBio.module.css";
 
 interface PersonalBioProps {
@@ -25,12 +24,11 @@ export const PersonalBio: FunctionComponent<PersonalBioProps> = ({
           gap: "2rem",
         }}
       >
-        <button
+        <IconClose
           className={styles.moduleButtonMobile}
           onClick={() => setCrewMember(undefined)}
-        >
-          Close the module
-        </button>
+        />
+
         <div
           style={{
             display: "flex",

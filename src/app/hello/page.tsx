@@ -19,13 +19,7 @@ export default function Hello() {
     const user = profiles.find((profile) => profile.id == id);
     setCrewMember(user);
   };
-  if (document.querySelector(".logo")) {
-    gsap.fromTo(
-      ".logo",
-      { opacity: 0, scale: 1 },
-      { opacity: 1, duration: 1, scale: 1, ease: "power1.out" }
-    );
-  }
+
   useGSAP(() => {
     if (document.querySelector(".personal-bio")) {
       gsap.fromTo(
@@ -39,38 +33,36 @@ export default function Hello() {
     }
   }, [crewMember]);
 
-  return (
-    <main>
-      <div style={{ height: "100dvh" }}>
-        <HelloNavBar
-          optionalStyles={{
-            color: "black",
-            backgroundColor: "rgba(0, 0, 0)",
-          }}
-        />
-        <div className={styles.pageContainer}>
-          <div className={styles.infoSectionContainer}>
-            <InfoSection handleClick={handleClick} />
-          </div>
-          {crewMember !== undefined ? (
-            <div className={styles.personalBioContainer}>
-              <PersonalBio
-                crewMember={crewMember}
-                setCrewMember={setCrewMember}
-              />
-            </div>
-          ) : (
-            <div className={`${styles.logo} logo`}>
-              <Image
-                src="/proper_form_logo.png"
-                alt={"proper-form"}
-                height={25}
-                width={136}
-              />
-            </div>
-          )}
+  <main>
+    <div style={{ height: "100dvh" }}>
+      <HelloNavBar
+        optionalStyles={{
+          color: "black",
+          backgroundColor: "rgba(0, 0, 0)",
+        }}
+      />
+      <div className={styles.pageContainer}>
+        <div className={styles.infoSectionContainer}>
+          <InfoSection handleClick={handleClick} />
         </div>
+        {crewMember !== undefined ? (
+          <div className={styles.personalBioContainer}>
+            <PersonalBio
+              crewMember={crewMember}
+              setCrewMember={setCrewMember}
+            />
+          </div>
+        ) : (
+          <div className={`${styles.logo} logo`}>
+            <Image
+              src="/proper_form_logo.png"
+              alt={"proper-form"}
+              height={25}
+              width={136}
+            />
+          </div>
+        )}
       </div>
-    </main>
-  );
+    </div>
+  </main>;
 }

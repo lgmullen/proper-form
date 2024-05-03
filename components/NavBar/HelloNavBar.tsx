@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { Dispatch, FunctionComponent, SetStateAction } from "react";
+import IconClose from "../Icons/IconClose";
 import styles from "./NavBar.module.css";
 
 interface NavBarProps {
   optionalStyles?: React.CSSProperties; // Define type for optional styles
+  toggleModal?: Dispatch<SetStateAction<boolean>>;
 }
 
 const defaultStyles: React.CSSProperties = {
@@ -25,19 +27,32 @@ const defaultStyles: React.CSSProperties = {
 
 export const HelloNavBar: FunctionComponent<NavBarProps> = ({
   optionalStyles,
+  toggleModal,
 }) => {
   const mergedStyles: React.CSSProperties = {
     ...defaultStyles,
     ...optionalStyles,
   };
+
   return (
     <div style={mergedStyles}>
-      <Link href="/roster">
-        <h3 className={styles.navButton}>Roster</h3>
-      </Link>
-      <Link href="/">
-        <h3 className={styles.navButton}>Home</h3>
-      </Link>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Link href="/roster">
+          <h3 className={styles.navButton}>Roster</h3>
+        </Link>
+        <Link href="/hello">
+          <h3 className={styles.navButton}>Hello</h3>
+        </Link>
+      </div>
+      <p style={{ color: "white" }}> Proper Form Logo here</p>
+      <IconClose
+        height="48px"
+        width="48px"
+        className={styles.moduleButtonMobile}
+        stroke="rgb(68, 144, 255)"
+        style={{ cursor: "pointer" }}
+        onClick={() => toggleModal && toggleModal(false)}
+      />
     </div>
   );
 };

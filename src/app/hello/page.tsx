@@ -9,6 +9,7 @@ import { HelloNavBar } from "../../../components/NavBar/HelloNavBar";
 import { profiles } from "../../helpers/profiles";
 import { CrewMember } from "../types";
 import styles from "./hello.module.css";
+import { NavBar } from "../../../components/NavBar/NavBar";
 
 export default function Hello() {
   const [crewMember, setCrewMember] = useState<CrewMember | undefined>(
@@ -37,7 +38,7 @@ export default function Hello() {
   return (
     <main>
       <div style={{ height: "100dvh" }}>
-        <HelloNavBar
+        <NavBar
           optionalStyles={{
             color: "black",
             backgroundColor: "rgba(0, 0, 0)",

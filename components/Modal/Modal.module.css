@@ -1,0 +1,88 @@
+.modalOverlay {
+  color: rgb(68, 144, 255);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: modal-open 0.6s ease forwards;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  grid-auto-flow: column;
+}
+.gridItem {
+  grid-column: 1;
+  place-self: center stretch;
+}
+
+.underline {
+  display: inline-block;
+  padding-bottom: 2px;
+  background-image: linear-gradient(white, white);
+  background-position: 0 100%; /*OR bottom left*/
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s, background-position 0s 0.5s; /*change after the size immediately*/
+}
+
+.underline:hover {
+  background-position: 100% 100%; /*OR bottom right*/
+  background-size: 100% 2px;
+}
+
+.modalOverlayClosing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: modal-close 2s ease forwards;
+}
+
+.modal {
+  background-color: black;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+:hover.navButton {
+  text-decoration: underline;
+}
+
+@keyframes modal-open {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-close {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}

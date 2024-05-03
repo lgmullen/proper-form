@@ -4,6 +4,7 @@ import { FunctionComponent, useState } from "react";
 import { Background } from "../Background";
 import { VideoSelector } from "../VideoSelector/VideoSelector";
 import { NavBar } from "../NavBar/NavBar";
+import { Modal } from "../Modal/Modal";
 
 const videoData = [
   {

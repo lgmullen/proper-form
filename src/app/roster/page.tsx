@@ -1,5 +1,6 @@
 "use client";
 import { Footer } from "../../../components/Footer/Footer";
+import { NavBar } from "../../../components/NavBar/NavBar";
 import { RosterNavBar } from "../../../components/NavBar/RosterNavBar";
 import styles from "./roster.module.css";
 
@@ -7,7 +8,7 @@ export default function Roster() {
   return (
     <main>
       <div style={{ height: "100dvh" }}>
-        <RosterNavBar
+        <NavBar
           optionalStyles={{
             color: "black",
             backgroundColor: "rgba(0, 0, 0)",

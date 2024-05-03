@@ -41,7 +41,7 @@ export const Footer: FunctionComponent = () => {
           />
         </div>
         <p></p>
-        <p style={{ fontSize: "12px", color: "white" }}>alex@properform.co</p>
+        <p style={{ fontSize: "12px", color: "white" }}>alex@properform.com</p>
         <p style={{ fontSize: "12px", color: "white" }}>
           © 2024 Proper Form Productions LLC
         </p>

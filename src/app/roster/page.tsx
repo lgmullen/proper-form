@@ -23,6 +23,7 @@ export default function Roster() {
             </p>
           </div>
         </div>
+        <div style={{ background: "brown", height: "12rem" }}></div>
         <Footer />
       </div>
     </main>

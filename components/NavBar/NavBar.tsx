@@ -1,7 +1,7 @@
-import { FunctionComponent } from "react";
-import styles from "./NavBar.module.css";
-import Router from "next/router";
 import Link from "next/link";
+import { FunctionComponent } from "react";
+import HamburgerIcon from "../Icons/HamburgerIcon";
+import styles from "./NavBar.module.css";
 
 interface NavBarProps {
   optionalStyles?: React.CSSProperties; // Define type for optional styles
@@ -30,12 +30,22 @@ export const NavBar: FunctionComponent<NavBarProps> = ({ optionalStyles }) => {
   };
   return (
     <div style={mergedStyles}>
-      <Link href="/roster">
-        <h3 className={styles.navButton}>Roster</h3>
-      </Link>
-      <Link href="/hello">
-        <h3 className={styles.navButton}>Hello</h3>
-      </Link>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Link href="/roster">
+          <h3 className={styles.navButton}>Roster</h3>
+        </Link>
+        <Link href="/hello">
+          <h3 className={styles.navButton}>Hello</h3>
+        </Link>
+      </div>
+      <p style={{ color: "white" }}> Proper Form Logo here</p>
+      <HamburgerIcon
+        height="48px"
+        width="48px"
+        className={styles.moduleButtonMobile}
+        stroke="rgb(68, 144, 255)"
+        style={{ cursor: "pointer" }}
+      />
     </div>
   );
 };

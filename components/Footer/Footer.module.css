@@ -5,4 +5,7 @@
   position: fixed;
   border-top: 2px solid rgb(68, 144, 255);
   box-shadow: none;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: row;
 }

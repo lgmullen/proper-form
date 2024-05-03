@@ -1,4 +1,5 @@
 "use client";
+import { Footer } from "../../../components/Footer/Footer";
 import { RosterNavBar } from "../../../components/NavBar/RosterNavBar";
 import styles from "./roster.module.css";
 
@@ -22,6 +23,7 @@ export default function Roster() {
             </p>
           </div>
         </div>
+        <Footer />
       </div>
     </main>
   );

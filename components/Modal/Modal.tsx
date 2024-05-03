@@ -40,9 +40,7 @@ export const Modal: FunctionComponent<ModalProps> = ({
                 <h2 className={styles.underline}>Home</h2>
               </Link>
               <h2>Email: alex@properform.com</h2>
-              <p style={{ gridColumn: "1 / span 3" }}>
-                © 2024 Proper Form Productions LLC
-              </p>
+              <p>© 2024 Proper Form Productions LLC</p>
             </div>
           </div>
         </div>
